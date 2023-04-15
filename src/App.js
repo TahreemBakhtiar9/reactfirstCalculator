@@ -1,7 +1,7 @@
 import { isCursorAtEnd } from '@testing-library/user-event/dist/utils';
 import './App.css';
 import { useState, useEffect } from 'react';
-import {default as NumberFormat } from 'react-number-format';
+import {NumberFormatBase, NumericFormat, PatternFormat, getNumericCaretBoundary, getPatternCaretBoundary, numericFormatter, patternFormatter, removeNumericFormat, removePatternFormat, useNumericFormat, usePatternFormat } from 'react-number-format';
 
 
 function App() {
@@ -109,7 +109,7 @@ function App() {
   return (
     <div className="container">
       <div className='wrapper'>
-        <div className='screen'>{input !== "" || input === "0" ? <NumberFormat value={input} displayType={'text'} thosandSeparator={true} /> : <NumberFormat value={preState} displayType={'text'} thousandSeparator={true} />}</div>
+        <div className='screen'>{input !== "" || input === "0" ? <NumberFormatBase value={input} displayType={'text'} thosandSeparator={true} /> : <NumberFormatBase value={preState} displayType={'text'} thousandSeparator={true} />}</div>
         <div className='btn lightgray' onClick={reset}>AC</div>
         <div className='btn lightgray' onClick={percent}>%</div>
         <div className='btn lightgray' onClick={plusMinus}>+/-</div>
